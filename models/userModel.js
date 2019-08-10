@@ -56,7 +56,7 @@ const userSchema = mongoose.Schema({
 
 
 //middlewares are defined on schema
-/*userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function (next) {
     //run below code only if password was actually modified
     if (!this.isModified("password")) {
         return next();
@@ -71,7 +71,7 @@ const userSchema = mongoose.Schema({
     this.passwordConfirm = undefined;
     next();
 });
-*/
+
 userSchema.pre(/^find/, async function(next){
     this.find({active: {$ne: false}});
     next();

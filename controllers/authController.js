@@ -91,7 +91,7 @@ exports.login = catchAsync(async (req, res, next) => {
     const user = await User.findOne({
         email: email
     }).select("+password");
-    //console.log(user);
+    console.log(user);
     //the select query is because we have set select property as false for passowrd in user model 
     //to make it invisible for the user
 
@@ -271,7 +271,7 @@ exports.isLoggedIn = async (req, res, next) => {
    // console.log("start")
     if (req.cookies.jwt) {
         try {
-            //console.log("op")
+            console.log("ofg")
             // 1) verify token
             const decoded = await promisify(jwt.verify)(
                 req.cookies.jwt,
