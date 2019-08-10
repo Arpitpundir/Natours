@@ -1,0 +1,9 @@
+1.If you keep your /:id route before /tab_stats then router will treat tab-stats as :id and will throw
+an error without checking further so we should keep it before. 
+
+2.If you are getting an error connection 28 to cluster0-shard-00-02-soj8g.mongodb.net:27017 closed
+while running your compass then you should whitelist your current id.
+
+3.killall -9 node
+
+4.ncdu

@@ -1,0 +1,52 @@
+Command to create and switch to a database
+//use databseName;
+whenever we insert some data from mongo shell it would be inserted as documents and documents are 
+present in a collection of a database
+//databseName.collectionName.inserteOne(javascriptObject);
+//db.tours.insertMany([{name: "The Sea Explorer", price: 497, rating: 4.8}, {name: "The Snow Adventurer", price: 997, rating: 4.9}])
+to insert multiple documents in a collection
+//db.coll.find(conditions)
+//show dbs
+to list all databases
+
+//show collections
+to list all collections of a databases
+//quit
+to quit the mongo shell
+//db.tours.find({name: "The Forest Hiker"});
+command to search for a tour having name ;
+//db.tours.find({price: {$lte: 500}});
+find all tours having price set to less than 500;
+//db.tours.find({price: {$lte: 500}, rating: {$gte: 4.7}});
+find tours stisfying above conditions with and operator
+//db.tours.find({$or: [{price: {$lte: 500}}, {rating: {$gte: 4.7}}]});
+find tours satisfying above conditions with or operator, all conditions for or operators are given in an array
+
+All the useabove find commands give us all the fields of satisfying documents but if we want only specific fields 
+thenwe can 
+//db.tours.find({$or: [{price: {$lte: 500}}, {rating: {$gte: 4.7}}]}, {name: 1});
+
+Update commands: During update commands we first need to query the object that we want to update so first argument
+would be a query having conditions and second object would be the command to se property to an updated value
+//db.tours.updateOne({name: "The Forest Hiker"}, {$set:{price: 497}})
+It there are multiple entries satisfying first query then only first one would be updated
+
+Adding a new property to a documents
+//db.tours.updateMany({price: {$gte: 500}, rating: {$gte: 4.8}}, {$set: {premium: true}});
+
+Replacing documents
+//db.tours.replaceOne();
+//db.tours.replaceMany();
+
+Deleting documents
+//db.tours.delete({query});
+//db.deleteMany({query});
+//db.tours.deleteMany()
+delete all documents from a collections
+
+//mongoose
+mongoose is an odm library for mongodb and node.js it gives us lot more functionality such easy data
+validation, schemas to model our data, a simple query api.
+A schema is where we model our data by defining structures, default values and validations
+A model is a wrapper for a schema that provides an interface for interacting our data for crud
+operations.

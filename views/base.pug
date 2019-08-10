@@ -1,0 +1,29 @@
+//-in pug the indentation means the content is inside of outer tag
+//-we specify attributes along with their values inside the paranthesis
+doctype html
+html
+    head
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel='stylesheet' href='/css/style.css')
+            link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+            title Natours | #{title}
+
+    body
+        // HEADER
+        include _header
+        //-all the header code would be pasted here
+
+        // CONTENT
+        block content
+            h1 This is a placeholder heading
+            //- when we extend any child file with base then all the content of the child fiel would coem
+            //-inthis block
+
+        // FOOTER
+        include _footer
+
+        script(src="https://js.stripe.com/v3/")
+        script(src='/js/bundle.js')

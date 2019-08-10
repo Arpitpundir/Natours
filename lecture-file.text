@@ -1,0 +1,16 @@
+120(handling unhandeled rejections)-server.js
+
+put function for unhandeled exception in server.js top
+
+123-userModel.js
+
+125 creating new users: authController.js userRoutes.js
+126 managing password: userModel.js, 
+
+128 signing up user designing web tokens
+129 logging a new user, instance methods authController.js userModel.js
+133 restricting delete feature tourModel.js
+135 sending email email.js what is a transporter? what is mailoptions?
+149 modelling gespatial location tourModel.js
+
+166 improving read performances with indexes tourModel.js

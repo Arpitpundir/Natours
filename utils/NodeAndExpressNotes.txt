@@ -1,0 +1,5 @@
+1. app.all(): there is a path given as a parameter and a callback function that would be called for any type 
+pf requests on this path
+
+2. Cookie: A coopkie is a piece of data that a web server sends to the browser and then web browser send 
+this cookie back to the server

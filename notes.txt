@@ -1,0 +1,5 @@
+multer
+multer is a node.js middleware that is used for processing for uploaded files. multer adds a body and 
+a file field on req object. body field contains the values of text fields of the form and file field
+contains file uploaded.
+In postman we use form-data feature of body to specify the files we want to send
