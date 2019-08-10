@@ -25,13 +25,14 @@ const signInToken = id => {
     });
 };
 
-const createSendToken = (user, statusCode, res) => {
+const createSendToken = (user, statusCode, res, req) => {
     const token = signInToken(user._id);
     const cookieOptions = {
         expires: new Date(
             Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
         ),
-        httpOnly: true
+        httpOnly: true,
+        secure: req.secure || req.headers['x-forwarded-proto'] === 'https'
     };
     if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
@@ -72,7 +73,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
     //     }
     // });
 
-    createSendToken(user, 201, res);
+    createSendToken(user, 201, res, req);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -106,7 +107,7 @@ exports.login = catchAsync(async (req, res, next) => {
         return next(new AppError("Please enter valid email and password", 400));
         //401 unauthorised
     }
-    createSendToken(user, 201, res);
+    createSendToken(user, 201, res, req);
 });
 
 exports.protect = catchAsync(async (req, res, next) => {
