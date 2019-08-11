@@ -8357,29 +8357,29 @@ function () {
 
           case 4:
             res = _context.sent;
-            console.log(res.cookies.jwt);
 
-            if (res.data.status === 'success') {
+            //console.log(res.cookies.jwt);
+            if (res.status === 201) {
               (0, _alerts.showAlert)('success', "Logged in sucessfully");
               window.setTimeout(function () {
                 location.assign('/'); //go back to home page
               }, 1500);
             }
 
-            _context.next = 12;
+            _context.next = 11;
             break;
 
-          case 9:
-            _context.prev = 9;
+          case 8:
+            _context.prev = 8;
             _context.t0 = _context["catch"](0);
             (0, _alerts.showAlert)("error", _context.t0.response.data.message); //console.log(res.body);
 
-          case 12:
+          case 11:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 9]]);
+    }, _callee, null, [[0, 8]]);
   }));
 
   return function login(_x, _x2) {

@@ -21,8 +21,8 @@ export const login = async (email, password) => {
                 password
             }
         });
-        console.log(res.cookies.jwt);
-        if (res.data.status === 'success') {
+        //console.log(res.cookies.jwt);
+        if (res.status === 201) {
 
             showAlert('success', "Logged in sucessfully");
             window.setTimeout(() => {
