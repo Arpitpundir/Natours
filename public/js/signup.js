@@ -15,7 +15,7 @@ exports.signup = async (name, email, password) => {
                 password
             }
         });
-        if (res.data.status === 'success') {
+        if (res.status === 201) {
 
             showAlert('success', "Signed in sucessfully");
             window.setTimeout(() => {
