@@ -66,7 +66,7 @@ app.listen(port, () => {
 //Making a get reqest working
 //const port = 8000;
 const app = express();
-app.enable("trust_proxy");
+app.enable("trust proxy");
 app.engine('pug', require('pug').__express)
 //save the mismatch of module 
 
