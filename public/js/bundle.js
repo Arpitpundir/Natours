@@ -8344,7 +8344,8 @@ function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            _context.next = 3;
+            console.log(email, password);
+            _context.next = 4;
             return (0, _axios.default)({
               method: 'POST',
               url: '/api/v1/users/login',
@@ -8354,7 +8355,7 @@ function () {
               }
             });
 
-          case 3:
+          case 4:
             res = _context.sent;
             console.log(res.cookies.jwt);
 
@@ -8365,20 +8366,20 @@ function () {
               }, 1500);
             }
 
-            _context.next = 11;
+            _context.next = 12;
             break;
 
-          case 8:
-            _context.prev = 8;
+          case 9:
+            _context.prev = 9;
             _context.t0 = _context["catch"](0);
             (0, _alerts.showAlert)("error", _context.t0.response.data.message); //console.log(res.body);
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 8]]);
+    }, _callee, null, [[0, 9]]);
   }));
 
   return function login(_x, _x2) {
