@@ -13,6 +13,7 @@ const pug = require("pug");
 const viewRouter = require("./routes/viewRoutes");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const helmet = require("helmet");
 //const app = express();
 //will provide a bunch of methods to app varibale
 
@@ -65,10 +66,12 @@ app.listen(port, () => {
 //Making a get reqest working
 //const port = 8000;
 const app = express();
+app.enable("trust_proxy");
 app.engine('pug', require('pug').__express)
 //save the mismatch of module 
 
 app.use(cors());
+app.use(helmet());
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')));

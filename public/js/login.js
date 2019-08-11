@@ -25,7 +25,7 @@ export const login = async (email, password) => {
 
             showAlert('success', "Logged in sucessfully");
             window.setTimeout(() => {
-                location.assign('http://127.0.0.1:3000/');
+                location.assign('/');
                 //go back to home page
             }, 1500);
         }
